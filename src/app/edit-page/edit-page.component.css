@@ -1,0 +1,28 @@
+.add_part{
+	margin-top: 10px;
+	border:0.5px solid black;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+.add{
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.edit_delete{
+	margin-top: 20px;
+	border:0.5px solid black;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+.save_button{
+	background-color: #fff;
+	color: green;
+	border-color: #ccc;
+	padding: 6px 12px;
+	border-radius: 2px;
+	border: 0.5px;
+
+}

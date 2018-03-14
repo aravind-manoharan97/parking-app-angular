@@ -1,0 +1,23 @@
+<div class="edit_delete">
+	<h4>ALLOTED DETAILS</h4>
+	<table class="table table-bordered">
+		<tr>
+			<td>ID</td>
+			<td>VEHICLE TYPE</td>
+			<td>VEHICLE NUMBER</td>
+			<td>COMPANY NAME</td>
+			<td>SLOT ALLOTED</td>
+			<td>TIME/DATE</td>
+			<td>DELETE</td>
+		</tr>
+		<tr *ngFor="let result of results;let i = index;">
+			<td>{{results[i].id}}	</td>
+			<td>{{results[i].v_type}}</td>
+			<td>{{results[i].v_number}}</td>
+			<td>{{results[i].company_name}}</td>
+			<td>{{results[i].slot_number}}</td>
+			<td>{{results[i].upload_date}}</td>
+			<td><button style="color:red;" (click)="deleteData(result.id)" class="btn btn-default">DELETE</button></td>
+		</tr>
+	</table>
+</div>

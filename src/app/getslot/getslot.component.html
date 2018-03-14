@@ -1,0 +1,83 @@
+
+<header><h3>Parking form</h3></header>
+<form class="form-inline-block" action="../php/post.php">
+
+    <div class="row">
+      <div class="form-group col-md-4">
+         <label for="name">Company Name :</label>
+      </div>
+      <div class="col-md-4">
+         <input type="text" class="form-control" name="name" [(ngModel)]="name">
+      </div>
+   </div>
+   <button type="submit" class="btn btn-default" (click)="getParkingDetails()" >GET PARKING DETAILS</button>
+   <p></p>
+   <span style="color:red;" *ngIf="not_found">Company name not found!</span>  
+</form>
+
+<div class="edit_delete" *ngIf="list">
+   <h4>ALLOTED DETAILS</h4>
+   <table class="table table-bordered">
+      <tr>
+         <td>ID</td>
+         <td>COMPANY NAME</td>
+         <td>TOWER NAME</td>
+         <td>BIKE PARKING SPACE</td>
+         <td>CAR PARKING SPACE</td>
+      </tr>
+      <tr *ngFor="let result of results;let i = index;">
+         <td>{{results[i].id}}</td>
+         <td>{{results[i].company_name}}</td>
+         <td>{{results[i].tower_name}}</td>
+         <td>{{results[i].bike_space}}</td>
+         <td>{{results[i].car_space}}</td>
+      </tr>
+   </table>
+</div>
+
+
+<div class="form-inline-block" *ngIf="parking">
+
+ <div class="row">
+      <div class="form-group col-sm-4">
+         <label for="type">Vehicle Type : </label>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+            <select class="form-control" (change)="slotCheck()" [(ngModel)]="type">
+               <option>car</option>
+               <option>bike</option>
+            </select>
+         </div>
+      </div>
+   </div>
+<p></p>
+    
+   <div class="row" *ngIf="notFull">
+      <div class="form-group col-md-4">
+         <label for="number">Vehicle Number : </label>
+      </div>
+      <div class="col-md-4">
+         <input type="text" class="form-control" name="number" [(ngModel)]="number">
+      </div>
+   <p></p>
+   </div>
+   <button *ngIf="notFull" type="submit" class="btn btn-default" (click)="park()" >PARK</button>
+
+          <p style="color: red;" *ngIf="isFull">Sorry! Parking slot is full...Please contact your manager.</p>
+   
+   </div>
+
+<div class="loading-spinner" *ngIf="data==1">
+   
+</div> 
+
+<div *ngIf="data==2" class="ticket">
+   <h3>Parking Done!</h3>
+   <p>Status : {{delete_response[0].status}}</p>
+   <p>Company Name : {{delete_response[0].company_name}}</p>
+   <p>Slot Alloted : {{delete_response[0].slot_number}}</p>
+   <p>Vehicle Number : {{delete_response[0].v_number}}</p>
+   <p>Tower : {{delete_response[0].tower}}</p>
+</div>
+

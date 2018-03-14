@@ -1,0 +1,45 @@
+
+<div class="add_part">
+	<h4>ADD COMPANY DETAILS</h4>
+	 	<form class="form-inline add">
+    		<div class="form-group">
+      			<input type="text" class="form-control" id="company_name" placeholder="Company Name" name="company_name" [(ngModel)]="company_name">
+    		</div>
+    		<div class="form-group">
+    			<input type="text" class="form-control" id="tower_name" placeholder="Tower Name" name="tower_name" [(ngModel)]="tower_name">
+    		</div>
+    		<div class="form-group">
+    			<input type="number" class="form-control" id="car_space" placeholder="Car Space" name="car_space" [(ngModel)]="car_space">
+    		</div>
+    		<div class="form-group">
+    			<input type="number" class="form-control" id="bike_space" placeholder="Bike Space" name="bike_space" [(ngModel)]="bike_space">
+    		</div>
+    			<button (click)="addCompanyDetails('0','add')" class="btn btn-default">Add</button>
+  		</form>
+</div>
+
+<div class="edit_delete">
+	<h4>EDIT / DELETE COMPANY DETAILS</h4>
+	<table class="table table-bordered">
+		<tr>
+			<td>ID</td>
+			<td>COMPANY NAME</td>
+			<td>TOWER NAME</td>
+			<td>CAR SPACE</td>
+			<td>BIKE SPACE</td>
+			<td>SAVE</td>
+			<td>DELETE</td>
+		</tr>
+		<tr *ngFor="let result of results;let i = index;">
+			<td>{{results[i].id}}	</td>
+			<td><input class="form-control" #c_name_i value="{{results[i].company_name}}"/></td>
+			<td><input class="form-control" #t_name_i value="{{results[i].tower_name}}"/></td>
+			<td><input class="form-control" #c_space_i value="{{results[i].car_space}}"/></td>
+			<td><input class="form-control" #b_space_i value="{{results[i].bike_space}}"/></td>
+			<td><button style="color: green;" (click)="addCompanyDetails(result.id,'save',c_name_i.value,t_name_i.value,c_space_i.value,b_space_i.value)" class="btn btn-default">SAVE</button></td>
+			<td><button style="color:red;" (click)="addCompanyDetails(result.id,'delete',c_name_i.value,t_name_i.value,c_space_i.value,b_space_i.value)" class="btn btn-default">DELETE</button></td>
+		</tr>
+	</table>
+</div>
+
+

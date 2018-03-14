@@ -1,0 +1,47 @@
+form{
+	margin-top: 60px;
+}
+
+.loading-spinner {
+  margin: auto;
+  display: inline-block;
+  height: 50px;
+  margin-top: 20px;
+  width: 50px;
+  border: 1em solid rgba(0,0,0,0.5);
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  animation: 1.5s loader linear infinite;
+  position: relative;
+  z-index: 1;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: grey;
+  display: flex;
+  margin-left: 40%;
+  align-content: center;
+  align-items: center;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.ticket{
+  margin-bottom: 30px;
+	margin-top: 15px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+    transition: 0.3s;
+    margin-right: 330px;
+    margin-left: 330px;
+    border: #000;
+    padding: 10px;
+    border-radius: 5px ;
+}

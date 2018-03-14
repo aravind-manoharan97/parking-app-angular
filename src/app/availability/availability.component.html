@@ -1,0 +1,11 @@
+<div>
+	<h1>Parking Availability</h1>
+<table>
+	<tr *ngFor="let result of results;let i = index;">
+		<td>Id : {{results[i].id}} </td>
+		<td> Company Name : {{results[i].company_name}}</td>
+		<td> Tower Name : {{results[i].tower_name}} </td>
+		<td> Space : {{results[i].space}}</td>
+	</tr>
+</table>
+</div>

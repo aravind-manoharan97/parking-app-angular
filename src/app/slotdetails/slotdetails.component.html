@@ -1,0 +1,20 @@
+<header><h3>Parking Details</h3></header>
+<form class="form-inline-block" action="/action_page.php">
+   <div class="row">
+      <div class="form-group col-sm-4">
+         <label for="type">Company Name : </label>
+      </div>
+      <div class="col-md-4">
+         <input type="text" class="form-control" name="name" [(ngModel)]="c_name">
+      </div>
+   </div> 
+   {{c_name}}
+   <button type="submit" (click)="getData()" class="btn btn-default" *ngIf="c_name.length>0">Get Details</button>
+</form>
+<div *ngIf="data">
+Details : 
+<p>
+      Id : {{results[0].id}} || Company Name : {{results[0].company_name}}
+		|| Tower Name : {{results[0].tower_name}} || Space : {{results[0].space}}
+   </p>
+	</div>
